@@ -75,11 +75,10 @@ export function PlatformSection() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
-                activeTab === tab.id
+              className={`px-6 py-3 rounded-full font-medium transition-all ${activeTab === tab.id
                   ? "bg-black text-white shadow-lg"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+                }`}
             >
               {tab.label}
             </button>
@@ -118,12 +117,12 @@ export function PlatformSection() {
           {/* Right - Image */}
           <div className="order-1 lg:order-2 relative">
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-gray-200 to-gray-100 border-8 border-black">
-              <Image
+              {/* <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-15%20at%2023.20.38-rWNEIE5Q5o1WD5jLbdeSmJxbeiksz.jpeg"
                 alt={`${features[activeTab as keyof typeof features].title} Dashboard`}
                 fill
                 className="object-cover"
-              />
+              /> */}
             </div>
 
             {/* Floating Badge */}
