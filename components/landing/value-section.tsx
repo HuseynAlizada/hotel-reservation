@@ -34,12 +34,12 @@ export function ValueSection() {
           {/* Right Content - Product Image */}
           <div className="relative">
             <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b from-gray-200 to-gray-100 border-8 border-black">
-              <Image
+              {/* <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-15%20at%2023.20.38-rWNEIE5Q5o1WD5jLbdeSmJxbeiksz.jpeg"
                 alt="Hotel Management Dashboard"
                 fill
                 className="object-cover"
-              />
+              /> */}
             </div>
           </div>
         </div>
