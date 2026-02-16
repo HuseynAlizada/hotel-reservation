@@ -54,12 +54,12 @@ export function HeroSection() {
             {/* Right Content - Product Showcase */}
             <div className="flex-1 relative flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
-                <Image
+                {/* <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-15%20at%2023.20.38-rWNEIE5Q5o1WD5jLbdeSmJxbeiksz.jpeg"
                   alt="Hotel ERP Dashboard"
                   fill
                   className="object-cover"
-                />
+                /> */}
               </div>
             </div>
           </div>
