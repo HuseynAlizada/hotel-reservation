@@ -21,7 +21,7 @@ export function UpdatesSection() {
                 Get product updates, feature releases, and hospitality insights — straight to your inbox
               </p>
             </div>
-            
+
             <div className="flex gap-3 flex-wrap">
               <Link href="/request-form">
                 <Button className="bg-white text-black hover:bg-gray-100 px-6 py-2 h-10">
@@ -39,13 +39,13 @@ export function UpdatesSection() {
           {/* Right Image */}
           <div className="flex justify-center md:justify-end">
             <div className="relative w-full max-w-md">
-              <Image
+              {/* <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-15%20at%2023.20.38-rWNEIE5Q5o1WD5jLbdeSmJxbeiksz.jpeg"
                 alt="Dashboard mockup"
                 width={400}
                 height={300}
                 className="w-full h-auto rounded-lg shadow-2xl"
-              />
+              /> */}
             </div>
           </div>
         </div>
