@@ -1,10 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
-import { Instagram, Linkedin, Send, Zap } from 'lucide-react'
+import { Instagram, Linkedin, Send, Zap, ChevronRight, Users, CreditCard, Utensils } from 'lucide-react'
 import { LandingHeader } from '@/components/landing/landing-header'
 
 export default function HomePage() {
+  const [activeTab, setActiveTab] = useState('operations')
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Header Navigation */}
@@ -135,7 +137,156 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Operations Platform Section */}
+      <section className="py-16 md:py-24 px-6 bg-background">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="space-y-12">
+            {/* Section Header */}
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
+                One Platform.
+              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
+                Every Hotel Operation.
+              </h2>
+            </div>
+
+            {/* Tabs */}
+            <div className="flex flex-wrap gap-3 justify-start md:justify-center">
+              <button
+                onClick={() => setActiveTab('operations')}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  activeTab === 'operations'
+                    ? 'bg-foreground text-background'
+                    : 'bg-card text-foreground hover:bg-card/80'
+                }`}
+              >
+                Operations Management
+              </button>
+              <button
+                onClick={() => setActiveTab('finance')}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  activeTab === 'finance'
+                    ? 'bg-foreground text-background'
+                    : 'bg-card text-foreground hover:bg-card/80'
+                }`}
+              >
+                Finance & Administration
+              </button>
+              <button
+                onClick={() => setActiveTab('service')}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  activeTab === 'service'
+                    ? 'bg-foreground text-background'
+                    : 'bg-card text-foreground hover:bg-card/80'
+                }`}
+              >
+                Service Management
+              </button>
+            </div>
+
+            {/* Tab Content */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="space-y-6">
+                {activeTab === 'operations' && (
+                  <div className="space-y-6 animate-in fade-in duration-300">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground flex items-center gap-3">
+                      <Users className="h-6 w-6 text-accent" />
+                      Front Office
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Handle reservations, check-ins, room availability, and guest information efficiently from one streamlined interface.
+                    </p>
+                  </div>
+                )}
+                {activeTab === 'finance' && (
+                  <div className="space-y-6 animate-in fade-in duration-300">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground flex items-center gap-3">
+                      <CreditCard className="h-6 w-6 text-accent" />
+                      Financial Management
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Manage accounting, billing, payroll, and financial reports with complete transparency and real-time insights.
+                    </p>
+                  </div>
+                )}
+                {activeTab === 'service' && (
+                  <div className="space-y-6 animate-in fade-in duration-300">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground flex items-center gap-3">
+                      <Utensils className="h-6 w-6 text-accent" />
+                      Dining & Services
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Streamline restaurant operations, manage menus, track orders, and deliver exceptional guest service across all departments.
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              {/* Right Image */}
+              <div className="hidden lg:flex justify-center relative">
+                <div className="relative w-full max-w-md">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part3-y52zd05lxpzHutSg8sZOwWgbk89yj5.jpeg"
+                    alt="Operations Management Platform"
+                    className="w-full rounded-2xl object-cover shadow-2xl"
+                  />
+                  <button className="absolute bottom-4 right-4 p-3 bg-accent/90 text-accent-foreground rounded-full hover:bg-accent transition-colors shadow-lg">
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 md:py-24 px-6 bg-foreground text-background rounded-3xl mx-6 md:mx-auto md:max-w-7xl mb-16 md:mb-24">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-balance leading-tight">
+                Stay Updated.
+                <br />
+                Stay In Control.
+              </h2>
+
+              <p className="text-lg text-background/80 leading-relaxed">
+                Get product updates, feature releases, and hospitality insights — straight to your inbox.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                <Link
+                  href="/request-form"
+                  className="px-6 py-3 bg-background text-foreground rounded-full font-medium hover:bg-background/90 transition-colors text-center"
+                >
+                  Get Request form
+                </Link>
+                <Link
+                  href="/book-demo"
+                  className="px-6 py-3 bg-background text-foreground rounded-full font-medium hover:bg-background/90 transition-colors text-center"
+                >
+                  Book a Demo
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="hidden lg:flex justify-center">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part4-fpU1VbJQOGMYtRNlImttZs99YOAJmQ.jpeg"
+                alt="Stay Updated Dashboard"
+                className="w-full max-w-lg rounded-2xl object-cover shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
       <section className="py-16 md:py-24 px-6 bg-card/30">
         <div className="mx-auto w-full max-w-4xl text-center space-y-8">
           <div className="space-y-4">
