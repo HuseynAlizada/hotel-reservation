@@ -34,20 +34,20 @@ export function ValueSection() {
           {/* Right Content - Product Image with Badge */}
           <div className="relative flex justify-center">
             <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gray-100 border-4 border-gray-200">
-              <Image
+              {/* <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-15%20at%2023.20.38-2lfixzlBCaNL7E6gpEcXbALoV9ueGI.jpeg"
                 alt="Hotel Management Dashboard"
                 fill
                 className="object-cover"
-              />
+              /> */}
             </div>
-            
+
             {/* Floating Badges */}
             <div className="absolute top-8 right-0 bg-white rounded-lg shadow-lg px-4 py-3 border border-gray-200">
               <p className="text-xs text-gray-600 font-medium">Payment</p>
               <p className="text-lg font-bold text-gray-900">15+</p>
             </div>
-            
+
             <div className="absolute bottom-12 right-0 bg-gray-100 rounded-lg shadow-lg px-4 py-3 border border-gray-300">
               <p className="text-xs text-gray-600 font-medium">Users</p>
               <p className="text-lg font-bold text-gray-900">50+</p>
