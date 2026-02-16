@@ -9,7 +9,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-white">
       <LandingHeader />
       {/* <HeroSection /> */}
-      <ValueSection />
+      {/* <ValueSection /> */}
       <PlatformSection />
       <CTASection />
     </main>
