@@ -2,11 +2,55 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Instagram, Linkedin, Send, Zap, ChevronRight, Users, CreditCard, Utensils } from 'lucide-react'
+import { Instagram, Linkedin, Send, Zap, ChevronRight, Users, CreditCard, Utensils, ChevronLeft } from 'lucide-react'
 import { LandingHeader } from '@/components/landing/landing-header'
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
+
+const testimonials = [
+  {
+    id: 1,
+    quote: "A complete operational upgrade for our hotel. Since switching to this system, our front desk and housekeeping teams work in perfect sync. Daily operations are faster, cleaner, and far more reliable.",
+    author: "General Manager",
+    company: "City Hotel",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part5-G0DQrvB58eUmbkFp94Aqxexwx8KWqR.jpeg"
+  },
+  {
+    id: 2,
+    quote: "The best investment we made for our boutique property. The system is intuitive and our entire team adapted within days. Guest satisfaction scores improved immediately.",
+    author: "Operations Manager",
+    company: "Boutique Hotel",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part5-G0DQrvB58eUmbkFp94Aqxexwx8KWqR.jpeg"
+  },
+  {
+    id: 3,
+    quote: "We've streamlined our entire operation with this platform. From reservations to billing, everything is seamless. It's saved us countless hours and improved our bottom line significantly.",
+    author: "General Manager",
+    company: "Resort & Spa",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part5-G0DQrvB58eUmbkFp94Aqxexwx8KWqR.jpeg"
+  }
+]
+
+const faqs = [
+  {
+    id: 'faq-1',
+    question: "Is the system suitable for hotels of all sizes?",
+    answer: "Yes. Our platform is designed to scale effortlessly — from boutique hotels to large multi-property operations. The system adapts to your needs without requiring custom development."
+  },
+  {
+    id: 'faq-2',
+    question: "Can all departments use the system simultaneously?",
+    answer: "Absolutely. Our system supports unlimited concurrent users across all departments. Front office, housekeeping, accounting, restaurant, and maintenance teams can all work in real-time without performance issues."
+  },
+  {
+    id: 'faq-3',
+    question: "Is training or technical support provided?",
+    answer: "Yes. We provide comprehensive training for your staff, detailed documentation, and 24/7 technical support to ensure smooth implementation and ongoing success."
+  }
+]
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState('operations')
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Header Navigation */}
@@ -281,6 +325,131 @@ export default function HomePage() {
                 alt="Stay Updated Dashboard"
                 className="w-full max-w-lg rounded-2xl object-cover shadow-2xl"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24 px-6 bg-foreground text-background">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="space-y-12">
+            {/* Section Header */}
+            <div className="text-center space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-balance">
+                What Our Clients Say
+              </h2>
+              <p className="text-lg text-background/80 text-balance max-w-2xl mx-auto">
+                Trusted by hotels and hospitality teams who rely on efficiency, clarity, and reliable daily operations.
+              </p>
+            </div>
+
+            {/* Testimonials Carousel */}
+            <div className="flex gap-6 items-center justify-center">
+              {/* Previous Button */}
+              <button
+                onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                className="p-2 rounded-full bg-background/20 text-background hover:bg-background/40 transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              {/* Testimonial Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
+                {testimonials.map((testimonial, index) => (
+                  <div
+                    key={testimonial.id}
+                    className={`p-6 rounded-2xl transition-all duration-300 ${
+                      index === currentTestimonial
+                        ? 'bg-background text-foreground scale-100 opacity-100'
+                        : 'bg-background/20 text-background/80 scale-95 opacity-60'
+                    }`}
+                  >
+                    <p className="mb-6 text-base leading-relaxed italic">
+                      "{testimonial.quote}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.author}
+                        className="h-12 w-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <p className="font-semibold text-sm">{testimonial.author}</p>
+                        <p className="text-xs opacity-75">{testimonial.company}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                className="p-2 rounded-full bg-background/20 text-background hover:bg-background/40 transition-colors"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentTestimonial
+                      ? 'bg-background w-8'
+                      : 'bg-background/40 w-2'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24 px-6 bg-background">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
+                  FAQ's
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Find quick answers to the most common questions about our hotel CRM & ERP system.
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="inline-block px-6 py-3 mt-4 border border-foreground/20 text-foreground rounded-full font-medium hover:bg-card transition-colors"
+              >
+                Need More Help?
+              </Link>
+            </div>
+
+            {/* Right FAQ Items */}
+            <div>
+              <Accordion type="single" collapsible defaultValue="faq-1">
+                {faqs.map((faq) => (
+                  <AccordionItem key={faq.id} value={faq.id}>
+                    <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent transition-colors py-4">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </div>
