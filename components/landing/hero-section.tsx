@@ -2,75 +2,64 @@
 
 import { Instagram, Linkedin, MessageCircle, Send } from "lucide-react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full pt-12 pb-24 px-4 md:px-6">
-      <div className="mx-auto max-w-6xl">
-        {/* Main Hero Container */}
-        <div className="relative bg-gradient-to-br from-black via-neutral-900 to-black rounded-3xl overflow-hidden border border-neutral-800 p-8 md:p-12 lg:p-16">
-          {/* Background gradient accent */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent opacity-0"></div>
+    <section className="relative w-full pt-8 pb-16 px-4 md:px-6 bg-white">
+      <div className="mx-auto max-w-7xl">
+        {/* Main Hero Container with Dark Background */}
+        <div className="relative bg-black rounded-3xl overflow-hidden p-8 md:p-12 lg:p-16 min-h-[500px] md:min-h-[600px]">
+          {/* Dark overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
 
-          <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 h-full">
             {/* Left Content */}
-            <div className="flex-1 flex flex-col justify-between">
-              {/* Top Badge */}
-              <div className="mb-8">
-                <span className="inline-block px-4 py-2 rounded-full text-xs font-medium bg-neutral-800 text-neutral-300 border border-neutral-700">
-                  Hotel Management Solution
-                </span>
-              </div>
-
-              {/* Main Heading */}
-              <div className="mb-8">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-                  Hotel ERP &<br />CRM System
-                </h1>
-                <p className="text-lg text-neutral-400">
-                  Complete platform for modern hotel management
-                </p>
-              </div>
+            <div className="flex-1 flex flex-col justify-center">
+              {/* Main Heading - Large and Bold */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                Hotel ERP &
+                <br />
+                CRM System
+              </h1>
 
               {/* Social Icons */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 mt-8">
                 <a
-                  href="#"
-                  className="h-10 w-10 rounded-full bg-neutral-800 hover:bg-neutral-700 flex items-center justify-center transition-colors border border-neutral-700"
+                  href="https://wa.me/"
+                  className="h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/20"
                 >
-                  <MessageCircle className="h-4 w-4 text-neutral-400" />
+                  <MessageCircle className="h-5 w-5 text-white" />
                 </a>
                 <a
                   href="#"
-                  className="h-10 w-10 rounded-full bg-neutral-800 hover:bg-neutral-700 flex items-center justify-center transition-colors border border-neutral-700"
+                  className="h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/20"
                 >
-                  <Instagram className="h-4 w-4 text-neutral-400" />
+                  <Instagram className="h-5 w-5 text-white" />
                 </a>
                 <a
                   href="#"
-                  className="h-10 w-10 rounded-full bg-neutral-800 hover:bg-neutral-700 flex items-center justify-center transition-colors border border-neutral-700"
+                  className="h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/20"
                 >
-                  <Linkedin className="h-4 w-4 text-neutral-400" />
+                  <Linkedin className="h-5 w-5 text-white" />
                 </a>
                 <a
                   href="#"
-                  className="h-10 w-10 rounded-full bg-neutral-800 hover:bg-neutral-700 flex items-center justify-center transition-colors border border-neutral-700"
+                  className="h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/20"
                 >
-                  <Send className="h-4 w-4 text-neutral-400" />
+                  <Send className="h-5 w-5 text-white" />
                 </a>
               </div>
             </div>
 
             {/* Right Content - Product Showcase */}
-            <div className="flex-1 relative">
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border-8 border-neutral-900 shadow-2xl bg-gradient-to-b from-neutral-100 to-neutral-50">
-                {/* <Image
+            <div className="flex-1 relative flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-15%20at%2023.20.38-rWNEIE5Q5o1WD5jLbdeSmJxbeiksz.jpeg"
                   alt="Hotel ERP Dashboard"
                   fill
                   className="object-cover"
-                /> */}
+                />
               </div>
             </div>
           </div>
