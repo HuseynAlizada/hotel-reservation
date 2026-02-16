@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Instagram, Linkedin, Send, Zap, ChevronRight, Users, CreditCard, Utensils, ChevronLeft } from 'lucide-react'
+import { Instagram, Linkedin, Send, Zap, ChevronRight, Users, CreditCard, Utensils, ChevronLeft, Mail, Phone, MapPin, MessageCircle, Smartphone } from 'lucide-react'
 import { LandingHeader } from '@/components/landing/landing-header'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 
@@ -483,6 +483,156 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="py-16 md:py-24 px-6 bg-gradient-to-b from-card/20 to-background relative overflow-hidden">
+        {/* Decorative Wave Background */}
+        <div className="absolute inset-0 opacity-10">
+          <svg viewBox="0 0 1440 120" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              d="M0,50 Q360,0 720,50 T1440,50 L1440,120 L0,120 Z"
+              fill="currentColor"
+              className="text-accent"
+            />
+          </svg>
+        </div>
+
+        <div className="mx-auto w-full max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            {/* Quick Links Column */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-foreground mb-6">
+                Quickly Links
+              </h3>
+              <nav className="space-y-3 flex flex-col">
+                <Link
+                  href="/solutions"
+                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  Solutions
+                </Link>
+                <Link
+                  href="/features"
+                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  Features
+                </Link>
+                <Link
+                  href="#testimonials"
+                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  Testimonials
+                </Link>
+                <Link
+                  href="#faqs"
+                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  FAQ's
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  Contact
+                </Link>
+              </nav>
+            </div>
+
+            {/* Center Logo Column */}
+            <div className="space-y-6 flex flex-col items-center justify-center">
+              <div className="text-center">
+                <h2 className="text-2xl font-bold text-foreground mb-1">Webanly</h2>
+                <p className="text-sm text-muted-foreground">Digital Web Studio</p>
+              </div>
+
+              {/* Social Icons */}
+              <div className="space-y-2">
+                <p className="text-xs text-muted-foreground text-center font-medium">Follow us:</p>
+                <div className="flex gap-3 justify-center">
+                  <a
+                    href="#"
+                    className="p-2 rounded-full bg-card/50 text-muted-foreground hover:text-accent hover:bg-card transition-colors"
+                    aria-label="WhatsApp"
+                  >
+                    <Smartphone className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 rounded-full bg-card/50 text-muted-foreground hover:text-accent hover:bg-card transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 rounded-full bg-card/50 text-muted-foreground hover:text-accent hover:bg-card transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 rounded-full bg-card/50 text-muted-foreground hover:text-accent hover:bg-card transition-colors"
+                    aria-label="Telegram"
+                  >
+                    <Send className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 rounded-full bg-card/50 text-muted-foreground hover:text-accent hover:bg-card transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Column */}
+            <div className="space-y-4 md:text-right">
+              <h3 className="text-lg font-semibold text-foreground mb-6">
+                Contact Us
+              </h3>
+              <div className="space-y-4 flex flex-col">
+                <a
+                  href="tel:+994507030302"
+                  className="flex md:flex-row-reverse items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  <Phone className="h-4 w-4 flex-shrink-0" />
+                  <span>+994 50 703 03 02</span>
+                </a>
+                <a
+                  href="#"
+                  className="flex md:flex-row-reverse items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  <MapPin className="h-4 w-4 flex-shrink-0" />
+                  <span>Naxçıvan 9, Baku, Azerbaijan</span>
+                </a>
+                <a
+                  href="mailto:info@webanly.com"
+                  className="flex md:flex-row-reverse items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  <Mail className="h-4 w-4 flex-shrink-0" />
+                  <span>info@webanly.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-card/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+            <p>&copy; 2024 Webanly. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/privacy" className="hover:text-accent transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-accent transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }
