@@ -57,65 +57,67 @@ export default function HomePage() {
       <LandingHeader activePage="Home" />
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center px-6 py-12 md:py-0 bg-black overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part1-m4B3B1K3qCMPvgfmLu5cg2SyQcyRZn.jpeg"
-            alt="Hero Background"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <section className="relative min-h-[calc(100vh-80px)] flex items-center px-6 py-12 md:py-0 bg-gradient-to-b from-card/50 to-background">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance leading-tight">
+                Hotel ERP & <span className="text-accent">CRM System</span>
+              </h1>
 
-        {/* Content Overlay */}
-        <div className="relative z-10 mx-auto w-full max-w-7xl">
-          <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-between py-12">
-            {/* Top spacing */}
-            <div />
+              <p className="text-lg text-muted-foreground text-balance max-w-lg leading-relaxed">
+                Streamline your hotel operations with our comprehensive management solution. From reservations to guest services, handle everything in one unified platform.
+              </p>
 
-            {/* Center Content */}
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full">
-              {/* Left - Empty space for image */}
-              <div className="flex-1 hidden lg:block" />
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link
+                  href="/request-form"
+                  className="px-6 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
+                >
+                  Book a Demo
+                </Link>
+                <Link
+                  href="/solutions"
+                  className="px-6 py-3 bg-card text-card-foreground rounded-lg font-medium hover:bg-card/80 transition-colors text-center"
+                >
+                  Learn More
+                </Link>
+              </div>
 
-              {/* Right - Title */}
-              <div className="flex-1 flex items-center justify-end">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-right text-balance leading-tight">
-                  Hotel ERP &<br />CRM System
-                </h1>
+              {/* Social Icons */}
+              <div className="flex gap-4 pt-6">
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-card/50 text-muted-foreground hover:text-accent transition-colors"
+                  aria-label="WhatsApp"
+                >
+                  <Send className="h-5 w-5" />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-card/50 text-muted-foreground hover:text-accent transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-card/50 text-muted-foreground hover:text-accent transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </div>
             </div>
 
-            {/* Bottom Social Icons */}
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/20"
-                aria-label="WhatsApp"
-              >
-                <Send className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/20"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/20"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/20"
-                aria-label="Telegram"
-              >
-                <MessageCircle className="h-5 w-5" />
-              </a>
+            {/* Right Image */}
+            <div className="hidden lg:flex justify-center">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part1-m4B3B1K3qCMPvgfmLu5cg2SyQcyRZn.jpeg"
+                alt="Hotel ERP Dashboard"
+                className="w-full max-w-lg rounded-2xl object-cover shadow-2xl"
+              />
             </div>
           </div>
         </div>
