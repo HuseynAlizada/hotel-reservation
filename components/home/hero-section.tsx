@@ -3,11 +3,11 @@
 export function HeroSection() {
   return (
     <section 
-      className="w-full min-h-screen bg-white"
+      className="relative w-full min-h-screen bg-white overflow-hidden"
     >
-      {/* Banner Background Image - Absolute at top, behind header */}
+      {/* Banner Background Image - Absolute at top:0 */}
       <div 
-        className="fixed top-0 left-0 right-0 h-3/4 w-full z-0"
+        className="absolute top-0 left-0 right-0 h-3/4 w-full z-0"
         style={{
           backgroundImage: 'url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part1-TuihonFcVZNPzSCG2mcg8F0sptrDNG.jpeg)',
           backgroundSize: 'cover',
@@ -15,8 +15,8 @@ export function HeroSection() {
         }}
       />
       
-      {/* Content - positioned relative to overlay the banner */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 lg:px-8 w-full pt-96 pb-20 md:pb-32">
+      {/* Content - positioned at bottom of section */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 lg:px-8 w-full h-full flex items-end pb-20 md:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 w-full items-end">
           {/* Left - Social Icons - 400px width */}
           <div className="flex gap-4 w-96">
