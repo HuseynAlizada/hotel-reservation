@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { MessageCircle, Instagram, Linkedin, Send, ChevronRight, ChevronLeft, Plus, Minus, Phone, MapPin, Mail, Facebook } from 'lucide-react'
 import { useState, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { HeroSection } from '@/components/home/hero-section'
+import { LandingHeader } from '@/components/landing/landing-header'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('operations')
@@ -100,62 +102,8 @@ export default function Home() {
 
       {/* Main Content */}
       <main>
-        {/* Hero Section - Full Screen with Device Background */}
-        <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20 bg-white rounded-3xl">
-          {/* Background - Device Image taking full space */}
-          <div className="absolute inset-0 z-0 rounded-3xl">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part1-MfjgIeMSzCsYC8CkDwq9vzT7LKxUDR.jpeg"
-              alt="Hotel ERP Dashboard - Laptop Device"
-              fill
-              className="object-cover w-full h-full rounded-3xl"
-              priority
-            />
-            {/* Subtle overlay - much lighter for white background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent rounded-3xl" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30 rounded-3xl" />
-          </div>
-
-          {/* Content Layout - Icons left, Text right */}
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 h-full w-full flex items-end justify-between pb-20">
-
-            {/* Social Icons - Bottom Left */}
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full border border-gray-300 hover:border-gray-400 flex items-center justify-center transition hover:bg-gray-100 bg-white"
-              >
-                <MessageCircle size={20} className="text-gray-900" />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full border border-gray-300 hover:border-gray-400 flex items-center justify-center transition hover:bg-gray-100 bg-white"
-              >
-                <Instagram size={20} className="text-gray-900" />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full border border-gray-300 hover:border-gray-400 flex items-center justify-center transition hover:bg-gray-100 bg-white"
-              >
-                <Linkedin size={20} className="text-gray-900" />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full border border-gray-300 hover:border-gray-400 flex items-center justify-center transition hover:bg-gray-100 bg-white"
-              >
-                <Send size={20} className="text-gray-900" />
-              </a>
-            </div>
-
-            {/* Text Content - Bottom Right */}
-            <div className="max-w-lg text-right">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white text-balance">
-                Hotel ERP & CRM{' '}
-                <span className="block">System</span>
-              </h1>
-            </div>
-          </div>
-        </section>
+        <LandingHeader activePage="Home" />
+        <HeroSection />
 
         {/* Features Section */}
         <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white">
