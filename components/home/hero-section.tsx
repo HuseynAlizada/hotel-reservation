@@ -1,47 +1,60 @@
 "use client"
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { ChevronRight } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full bg-black text-white overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="flex flex-col gap-6 text-balance">
-            <div className="flex flex-col gap-2">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Hotel ERP & CRM System
+    <section 
+      className="relative w-full overflow-hidden pt-24 pb-20 md:pt-32 md:pb-32"
+      style={{
+        backgroundImage: 'url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part1-TuihonFcVZNPzSCG2mcg8F0sptrDNG.jpeg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: 'white',
+      }}
+    >
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-white/70 mix-blend-overlay" />
+      
+      <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 lg:px-8 h-full flex flex-col">
+        <div className="flex-1 flex items-end pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 w-full items-end">
+            {/* Left - Social Icons */}
+            <div className="flex gap-4">
+              <button className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5c-.563-.074-1.996-.228-3.926-.228-3.88 0-6.785 2.369-6.785 6.719v2.509z" />
+                </svg>
+              </button>
+              <button className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 1.5h-5a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 1.5 1.5h5a1.5 1.5 0 0 0 1.5-1.5v-5a1.5 1.5 0 0 0-1.5-1.5m-2.5 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                </svg>
+              </button>
+              <button className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54h3.54l4.96-6.35-3.75 2.81z" />
+                </svg>
+              </button>
+              <button className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.615 3.175h-3.868v-1.787c0-.974-.191-1.388-1.268-1.388-.977 0-1.156.411-1.156 1.388v1.787h-3.868v-1.787c0-.974-.191-1.388-1.268-1.388-.977 0-1.156.411-1.156 1.388v1.787h-3.868v16.218h3.868v-8.544c0-.974.191-1.388 1.268-1.388.977 0 1.156.411 1.156 1.388v8.544h3.868v-8.544c0-.974.191-1.388 1.268-1.388.977 0 1.156.411 1.156 1.388v8.544h3.868V3.175z" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Right - Hotel ERP & CRM System Text */}
+            <div className="flex flex-col items-end text-right">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 leading-tight text-balance">
+                Hotel ERP &<br />CRM System
               </h1>
-              <p className="text-lg text-gray-400">
-                All-in-one solution for modern hotel operations
-              </p>
+              <div className="mt-4 flex items-center justify-end gap-2">
+                <button className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="relative h-96 md:h-full flex items-center justify-end">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/part1-TuihonFcVZNPzSCG2mcg8F0sptrDNG.jpeg"
-              alt="Hotel ERP Dashboard"
-              className="w-full h-full object-cover rounded-2xl"
-            />
-          </div>
-        </div>
-
-        {/* Bottom Navigation Bar */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center gap-4 pb-8">
-          <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-            </svg>
-          </button>
-          <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0z" />
-            </svg>
-          </button>
         </div>
       </div>
     </section>

@@ -14,7 +14,7 @@ const navItems = [
 
 export function LandingHeader({ activePage = "" }: { activePage?: string }) {
   return (
-    <header className="flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <div className="h-9 w-9 rounded-lg bg-card flex items-center justify-center">

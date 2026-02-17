@@ -13,13 +13,15 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       <LandingHeader activePage="Home" />
-      <HeroSection />
+      <div className="pt-20">
+        <HeroSection />
       <SolutionsSection />
       <FeaturesSection />
       <CtalSection />
       <TestimonialsSection />
       <FaqHomeSection />
       <FooterSection />
+      </div>
     </main>
   )
 }
